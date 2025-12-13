@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Certificate of Completion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #f4f6f8;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  background: linear-gradient(90deg, #00b7e3, #00c4a7, #4cb848);
+  padding: 22px 5%;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 85px;
+}
+
+.header-title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.header-title span {
+  font-weight: 200;
+}
+
+.header-mobile-verified {
+  display: none;
+}
+
+/* ================= BLUE TICK ================= */
+
+.tick {
+  position: absolute;
+  left: 50%;
+  bottom: -40px;
+  transform: translateX(-50%);
+  width: 78px;
+}
+
+/* ================= CERTIFICATE ================= */
+
+.certificate {
+  background: #ffffff;
+  padding: 90px 5% 60px;
+  flex: 1;
+}
+
+.certificate-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 20%;
+}
+
+/* LEFT */
+
+.left {
+  width: 220px;
+}
+
+.left img {
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+}
+
+/* RIGHT */
+
+.right {
+  flex: 1;
+  margin-left: 40px;
+  position: relative;
+}
+
+/* Verified stamp (desktop/tablet only) */
+.verified {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.verified img {
+  width: 140px;
+}
+
+/* TEXT */
+
+.name {
+  color: #478f35;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.course {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.issued {
+  font-size: 14px;
+  color: #555;
+}
+
+.issued-by {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.issued-logo {
+  height: 0.8em;
+  width: auto;
+  object-fit: contain;
+}
+
+.issued-date {
+  margin-top: 6px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 12px;
+  font-size: 12px;
+  color: #777;
+  margin-left: 2vw;
+}
+.footer a{
+    margin-left: 73vw;
+    text-align: left;
+    justify-self: left;
+}
+.footer br{
+    display: none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .certificate-wrapper {
+    flex-direction: column;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .right {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .verified {
+    position: static;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header swap */
+
+  .header{
+    padding-top: 0px;
+    height: 80px;
+  }
+  .header .logo{
+    height: 49px
+  }
+  .header-title {
+    display: none;
+  }
+  .left img{
+      box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+}
+  .right{
+    margin-left: 0;
+  }
+  .header-mobile-verified {
+    display: block;
+  }
+
+  .header-mobile-verified img {
+    height: 80px;
+  }
+
+  /* Smaller name on mobile */
+  .name {
+    font-size: 18px;
+  }
+.course{
+    font-size: 18px;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+  /* Force LEFT alignment only on small screens */
+  .subtitle,
+  .course,
+  .issued,
+  .issued-by,
+  .issued-date {
+    text-align: left;
+  }
+   .subtitle,
+.issued,
+  .issued-by,
+  .issued-date {
+    font-size: 2.5vw;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  /* Hide verified stamp in body */
+  .right .verified {
+    display: none;
+  }
+
+  .tick {
+    width: 60px;
+    bottom: -32px;
+  }
+  .footer{
+    background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 12px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+  }
+  .footer a{
+    margin-left: 0vw;
+    text-align: center;
+    justify-self: center;
+  }
+  .footer br{
+    display: block;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-content">
+    <img src="assets/Screenshot 2025-12-13 094716.png" class="logo" alt="L&T EduTech">
+
+    <!-- Desktop title -->
+    <div class="header-title">
+      CERTIFICATE <span>OF COMPLETION</span>
+    </div>
+
+    <!-- Mobile replacement -->
+    <div class="header-mobile-verified">
+      <img src="assets/whitetick.png" alt="Verified">
+    </div>
+  </div>
+
+  <!-- External SVG tick -->
+  <img src="assets/certified.svg" class="tick" alt="Certified">
+</header>
+
+<!-- CERTIFICATE -->
+<section class="certificate">
+  <div class="certificate-wrapper">
+
+    <div class="left">
+      <img src="assets/studentimg.png" alt="Student">
+    </div>
+
+    <div class="right">
+      <div class="verified">
+        <img src="assets/verified.png" alt="Verified">
+      </div>
+
+      <div class="name">NEHA GOWDA K</div>
+
+      <div class="subtitle">
+        has successfully completed the program
+      </div>
+
+      <div class="course">
+        Construction Aspects Of Steel Building
+      </div>
+
+      <div class="issued">
+        <div class="issued-by">
+          <span>Issued by</span>
+          <img src="assets/logo.png" alt="L&T EduTech" class="issued-logo">
+        </div>
+
+        <div class="issued-date">
+          Issued date  <span style="color: rgb(34, 34, 85); padding: left 2vw;;">1 December 2025</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  © 2025 L&amp;T EduTech. All rights reserved
+  <br><a href="https://lntedutech.com/privacy-policy-2/" target="_blank" style="color: #00b7e3; text-decoration: none;">Privacy Policy</a>
+</footer>
+
+</body>
+</html>
